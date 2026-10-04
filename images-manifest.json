@@ -1,0 +1,770 @@
+[
+  {
+    "path": "/images/hero/hero-spread.jpg",
+    "kind": "hero",
+    "label": "Hero background",
+    "hint": "Wide landscape Indian food spread, at least 1920px wide"
+  },
+  {
+    "path": "/images/categories/biryani.jpg",
+    "kind": "category",
+    "label": "Biryani",
+    "hint": "Close-up of Biryani"
+  },
+  {
+    "path": "/images/categories/pizza.jpg",
+    "kind": "category",
+    "label": "Pizza",
+    "hint": "Close-up of Pizza"
+  },
+  {
+    "path": "/images/categories/burgers.jpg",
+    "kind": "category",
+    "label": "Burgers",
+    "hint": "Close-up of Burgers"
+  },
+  {
+    "path": "/images/categories/chicken.jpg",
+    "kind": "category",
+    "label": "Chicken",
+    "hint": "Close-up of Chicken"
+  },
+  {
+    "path": "/images/categories/shawarma.jpg",
+    "kind": "category",
+    "label": "Shawarma",
+    "hint": "Close-up of Shawarma"
+  },
+  {
+    "path": "/images/categories/dosa.jpg",
+    "kind": "category",
+    "label": "Dosa",
+    "hint": "Close-up of Dosa"
+  },
+  {
+    "path": "/images/categories/south-indian.jpg",
+    "kind": "category",
+    "label": "South Indian",
+    "hint": "Close-up of South Indian"
+  },
+  {
+    "path": "/images/categories/north-indian.jpg",
+    "kind": "category",
+    "label": "North Indian",
+    "hint": "Close-up of North Indian"
+  },
+  {
+    "path": "/images/categories/chinese.jpg",
+    "kind": "category",
+    "label": "Chinese",
+    "hint": "Close-up of Chinese"
+  },
+  {
+    "path": "/images/categories/momos.jpg",
+    "kind": "category",
+    "label": "Momos",
+    "hint": "Close-up of Momos"
+  },
+  {
+    "path": "/images/categories/rolls.jpg",
+    "kind": "category",
+    "label": "Rolls",
+    "hint": "Close-up of Rolls"
+  },
+  {
+    "path": "/images/categories/kebabs.jpg",
+    "kind": "category",
+    "label": "Kebabs",
+    "hint": "Close-up of Kebabs"
+  },
+  {
+    "path": "/images/categories/desserts.jpg",
+    "kind": "category",
+    "label": "Desserts",
+    "hint": "Close-up of Desserts"
+  },
+  {
+    "path": "/images/categories/cakes.jpg",
+    "kind": "category",
+    "label": "Cakes",
+    "hint": "Close-up of Cakes"
+  },
+  {
+    "path": "/images/categories/ice-cream.jpg",
+    "kind": "category",
+    "label": "Ice Cream",
+    "hint": "Close-up of Ice Cream"
+  },
+  {
+    "path": "/images/categories/tiffins.jpg",
+    "kind": "category",
+    "label": "Tiffins",
+    "hint": "Close-up of Tiffins"
+  },
+  {
+    "path": "/images/categories/thali.jpg",
+    "kind": "category",
+    "label": "Thali",
+    "hint": "Close-up of Thali"
+  },
+  {
+    "path": "/images/categories/beverages.jpg",
+    "kind": "category",
+    "label": "Beverages",
+    "hint": "Close-up of Beverages"
+  },
+  {
+    "path": "/images/states/andhra-pradesh.jpg",
+    "kind": "state",
+    "label": "Andhra Pradesh",
+    "hint": "Signature dish of Andhra Pradesh"
+  },
+  {
+    "path": "/images/states/telangana.jpg",
+    "kind": "state",
+    "label": "Telangana",
+    "hint": "Signature dish of Telangana"
+  },
+  {
+    "path": "/images/states/karnataka.jpg",
+    "kind": "state",
+    "label": "Karnataka",
+    "hint": "Signature dish of Karnataka"
+  },
+  {
+    "path": "/images/states/tamil-nadu.jpg",
+    "kind": "state",
+    "label": "Tamil Nadu",
+    "hint": "Signature dish of Tamil Nadu"
+  },
+  {
+    "path": "/images/states/kerala.jpg",
+    "kind": "state",
+    "label": "Kerala",
+    "hint": "Signature dish of Kerala"
+  },
+  {
+    "path": "/images/states/maharashtra.jpg",
+    "kind": "state",
+    "label": "Maharashtra",
+    "hint": "Signature dish of Maharashtra"
+  },
+  {
+    "path": "/images/states/punjab.jpg",
+    "kind": "state",
+    "label": "Punjab",
+    "hint": "Signature dish of Punjab"
+  },
+  {
+    "path": "/images/states/rajasthan.jpg",
+    "kind": "state",
+    "label": "Rajasthan",
+    "hint": "Signature dish of Rajasthan"
+  },
+  {
+    "path": "/images/states/gujarat.jpg",
+    "kind": "state",
+    "label": "Gujarat",
+    "hint": "Signature dish of Gujarat"
+  },
+  {
+    "path": "/images/states/west-bengal.jpg",
+    "kind": "state",
+    "label": "West Bengal",
+    "hint": "Signature dish of West Bengal"
+  },
+  {
+    "path": "/images/states/odisha.jpg",
+    "kind": "state",
+    "label": "Odisha",
+    "hint": "Signature dish of Odisha"
+  },
+  {
+    "path": "/images/states/assam.jpg",
+    "kind": "state",
+    "label": "Assam",
+    "hint": "Signature dish of Assam"
+  },
+  {
+    "path": "/images/restaurants/royal-biryani-house.jpg",
+    "kind": "restaurant",
+    "label": "Royal Biryani House",
+    "hint": "Chicken or mutton biryani served in a handi"
+  },
+  {
+    "path": "/images/restaurants/hyderabad-spice-kitchen.jpg",
+    "kind": "restaurant",
+    "label": "Hyderabad Spice Kitchen",
+    "hint": "Hyderabadi dum biryani with mirchi ka salan"
+  },
+  {
+    "path": "/images/restaurants/deccan-dum-biryani.jpg",
+    "kind": "restaurant",
+    "label": "Deccan Dum Biryani",
+    "hint": "Dum biryani, sealed pot being opened"
+  },
+  {
+    "path": "/images/restaurants/biryani-junction.jpg",
+    "kind": "restaurant",
+    "label": "Biryani Junction",
+    "hint": "Biryani with raita and a meal spread"
+  },
+  {
+    "path": "/images/restaurants/nawabi-kitchen.jpg",
+    "kind": "restaurant",
+    "label": "Nawabi Kitchen",
+    "hint": "Mughlai spread: kebabs, curry and naan"
+  },
+  {
+    "path": "/images/restaurants/the-biryani-story.jpg",
+    "kind": "restaurant",
+    "label": "The Biryani Story",
+    "hint": "Biryani with seekh kebabs"
+  },
+  {
+    "path": "/images/restaurants/dosa-darbar.jpg",
+    "kind": "restaurant",
+    "label": "Dosa Darbar",
+    "hint": "Dosa, idli and vada tiffin spread"
+  },
+  {
+    "path": "/images/restaurants/slice-co.jpg",
+    "kind": "restaurant",
+    "label": "Slice & Co",
+    "hint": "Pizza and burger spread"
+  },
+  {
+    "path": "/images/restaurants/dragon-wok.jpg",
+    "kind": "restaurant",
+    "label": "Dragon Wok",
+    "hint": "Momos and noodles"
+  },
+  {
+    "path": "/images/restaurants/sweet-tooth-bakery.jpg",
+    "kind": "restaurant",
+    "label": "Sweet Tooth Bakery",
+    "hint": "Cakes and Indian desserts"
+  },
+  {
+    "path": "/images/biryani/chicken-biryani.jpg",
+    "kind": "dish",
+    "label": "Chicken Biryani",
+    "hint": "Appetising photo of Chicken Biryani"
+  },
+  {
+    "path": "/images/biryani/mutton-biryani.jpg",
+    "kind": "dish",
+    "label": "Mutton Biryani",
+    "hint": "Appetising photo of Mutton Biryani"
+  },
+  {
+    "path": "/images/biryani/veg-biryani.jpg",
+    "kind": "dish",
+    "label": "Veg Biryani",
+    "hint": "Appetising photo of Veg Biryani"
+  },
+  {
+    "path": "/images/pizza/margherita-pizza.jpg",
+    "kind": "dish",
+    "label": "Margherita Pizza",
+    "hint": "Appetising photo of Margherita Pizza"
+  },
+  {
+    "path": "/images/pizza/peri-peri-chicken-pizza.jpg",
+    "kind": "dish",
+    "label": "Peri Peri Chicken Pizza",
+    "hint": "Appetising photo of Peri Peri Chicken Pizza"
+  },
+  {
+    "path": "/images/burgers/crispy-chicken-burger.jpg",
+    "kind": "dish",
+    "label": "Crispy Chicken Burger",
+    "hint": "Appetising photo of Crispy Chicken Burger"
+  },
+  {
+    "path": "/images/burgers/paneer-burger.jpg",
+    "kind": "dish",
+    "label": "Paneer Burger",
+    "hint": "Appetising photo of Paneer Burger"
+  },
+  {
+    "path": "/images/chicken/chicken-65.jpg",
+    "kind": "dish",
+    "label": "Chicken 65",
+    "hint": "Appetising photo of Chicken 65"
+  },
+  {
+    "path": "/images/north-indian/butter-naan.jpg",
+    "kind": "dish",
+    "label": "Butter Naan",
+    "hint": "Appetising photo of Butter Naan"
+  },
+  {
+    "path": "/images/north-indian/paneer-butter-masala.jpg",
+    "kind": "dish",
+    "label": "Paneer Butter Masala",
+    "hint": "Appetising photo of Paneer Butter Masala"
+  },
+  {
+    "path": "/images/shawarma/chicken-shawarma-roll.jpg",
+    "kind": "dish",
+    "label": "Chicken Shawarma Roll",
+    "hint": "Appetising photo of Chicken Shawarma Roll"
+  },
+  {
+    "path": "/images/momos/chicken-momos.jpg",
+    "kind": "dish",
+    "label": "Chicken Momos",
+    "hint": "Appetising photo of Chicken Momos"
+  },
+  {
+    "path": "/images/momos/veg-momos.jpg",
+    "kind": "dish",
+    "label": "Veg Momos",
+    "hint": "Appetising photo of Veg Momos"
+  },
+  {
+    "path": "/images/rolls/egg-roll.jpg",
+    "kind": "dish",
+    "label": "Egg Roll",
+    "hint": "Appetising photo of Egg Roll"
+  },
+  {
+    "path": "/images/kebabs/chicken-seekh-kebab.jpg",
+    "kind": "dish",
+    "label": "Chicken Seekh Kebab",
+    "hint": "Appetising photo of Chicken Seekh Kebab"
+  },
+  {
+    "path": "/images/chinese/schezwan-fried-rice.jpg",
+    "kind": "dish",
+    "label": "Schezwan Fried Rice",
+    "hint": "Appetising photo of Schezwan Fried Rice"
+  },
+  {
+    "path": "/images/noodles/hakka-noodles.jpg",
+    "kind": "dish",
+    "label": "Hakka Noodles",
+    "hint": "Appetising photo of Hakka Noodles"
+  },
+  {
+    "path": "/images/tiffins/idli-vada-combo.jpg",
+    "kind": "dish",
+    "label": "Idli Vada Combo",
+    "hint": "Appetising photo of Idli Vada Combo"
+  },
+  {
+    "path": "/images/dosa/plain-dosa.jpg",
+    "kind": "dish",
+    "label": "Plain Dosa",
+    "hint": "Appetising photo of Plain Dosa"
+  },
+  {
+    "path": "/images/cakes/chocolate-truffle-cake.jpg",
+    "kind": "dish",
+    "label": "Chocolate Truffle Cake",
+    "hint": "Appetising photo of Chocolate Truffle Cake"
+  },
+  {
+    "path": "/images/ice-cream/vanilla-ice-cream.jpg",
+    "kind": "dish",
+    "label": "Vanilla Ice Cream",
+    "hint": "Appetising photo of Vanilla Ice Cream"
+  },
+  {
+    "path": "/images/desserts/gulab-jamun.jpg",
+    "kind": "dish",
+    "label": "Gulab Jamun",
+    "hint": "Appetising photo of Gulab Jamun"
+  },
+  {
+    "path": "/images/beverages/fresh-lime-soda.jpg",
+    "kind": "dish",
+    "label": "Fresh Lime Soda",
+    "hint": "Appetising photo of Fresh Lime Soda"
+  },
+  {
+    "path": "/images/beverages/cold-coffee.jpg",
+    "kind": "dish",
+    "label": "Cold Coffee",
+    "hint": "Appetising photo of Cold Coffee"
+  },
+  {
+    "path": "/images/thali/south-indian-meals.jpg",
+    "kind": "dish",
+    "label": "South Indian Meals",
+    "hint": "Appetising photo of South Indian Meals"
+  },
+  {
+    "path": "/images/thali/north-indian-thali.jpg",
+    "kind": "dish",
+    "label": "North Indian Thali",
+    "hint": "Appetising photo of North Indian Thali"
+  },
+  {
+    "path": "/images/regional/ap/andhra-chicken.jpg",
+    "kind": "dish",
+    "label": "Andhra Chicken",
+    "hint": "Appetising photo of Andhra Chicken (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/ap/gongura-chicken.jpg",
+    "kind": "dish",
+    "label": "Gongura Chicken",
+    "hint": "Appetising photo of Gongura Chicken (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/ap/pulihora.jpg",
+    "kind": "dish",
+    "label": "Pulihora",
+    "hint": "Appetising photo of Pulihora (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/ap/andhra-meals.jpg",
+    "kind": "dish",
+    "label": "Andhra Meals",
+    "hint": "Appetising photo of Andhra Meals (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/ap/gutti-vankaya.jpg",
+    "kind": "dish",
+    "label": "Gutti Vankaya",
+    "hint": "Appetising photo of Gutti Vankaya (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/ap/royyala-iguru.jpg",
+    "kind": "dish",
+    "label": "Royyala Iguru",
+    "hint": "Appetising photo of Royyala Iguru (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/tg/hyderabadi-biryani.jpg",
+    "kind": "dish",
+    "label": "Hyderabadi Biryani",
+    "hint": "Appetising photo of Hyderabadi Biryani (Telangana)"
+  },
+  {
+    "path": "/images/regional/tg/haleem.jpg",
+    "kind": "dish",
+    "label": "Haleem",
+    "hint": "Appetising photo of Haleem (Telangana)"
+  },
+  {
+    "path": "/images/regional/tg/double-ka-meetha.jpg",
+    "kind": "dish",
+    "label": "Double Ka Meetha",
+    "hint": "Appetising photo of Double Ka Meetha (Telangana)"
+  },
+  {
+    "path": "/images/regional/tg/mirchi-ka-salan.jpg",
+    "kind": "dish",
+    "label": "Mirchi Ka Salan",
+    "hint": "Appetising photo of Mirchi Ka Salan (Telangana)"
+  },
+  {
+    "path": "/images/regional/ka/bisi-bele-bath.jpg",
+    "kind": "dish",
+    "label": "Bisi Bele Bath",
+    "hint": "Appetising photo of Bisi Bele Bath (Karnataka)"
+  },
+  {
+    "path": "/images/regional/ka/mysore-masala-dosa.jpg",
+    "kind": "dish",
+    "label": "Mysore Masala Dosa",
+    "hint": "Appetising photo of Mysore Masala Dosa (Karnataka)"
+  },
+  {
+    "path": "/images/regional/ka/ragi-mudde.jpg",
+    "kind": "dish",
+    "label": "Ragi Mudde",
+    "hint": "Appetising photo of Ragi Mudde (Karnataka)"
+  },
+  {
+    "path": "/images/regional/ka/dharwad-peda.jpg",
+    "kind": "dish",
+    "label": "Dharwad Peda",
+    "hint": "Appetising photo of Dharwad Peda (Karnataka)"
+  },
+  {
+    "path": "/images/regional/tn/masala-dosa.jpg",
+    "kind": "dish",
+    "label": "Masala Dosa",
+    "hint": "Appetising photo of Masala Dosa (Tamil Nadu)"
+  },
+  {
+    "path": "/images/regional/tn/pongal.jpg",
+    "kind": "dish",
+    "label": "Pongal",
+    "hint": "Appetising photo of Pongal (Tamil Nadu)"
+  },
+  {
+    "path": "/images/regional/tn/chettinad-chicken.jpg",
+    "kind": "dish",
+    "label": "Chettinad Chicken",
+    "hint": "Appetising photo of Chettinad Chicken (Tamil Nadu)"
+  },
+  {
+    "path": "/images/regional/tn/parotta.jpg",
+    "kind": "dish",
+    "label": "Parotta",
+    "hint": "Appetising photo of Parotta (Tamil Nadu)"
+  },
+  {
+    "path": "/images/regional/kl/appam.jpg",
+    "kind": "dish",
+    "label": "Appam",
+    "hint": "Appetising photo of Appam (Kerala)"
+  },
+  {
+    "path": "/images/regional/kl/kerala-parotta.jpg",
+    "kind": "dish",
+    "label": "Kerala Parotta",
+    "hint": "Appetising photo of Kerala Parotta (Kerala)"
+  },
+  {
+    "path": "/images/regional/kl/malabar-biryani.jpg",
+    "kind": "dish",
+    "label": "Malabar Biryani",
+    "hint": "Appetising photo of Malabar Biryani (Kerala)"
+  },
+  {
+    "path": "/images/regional/kl/puttu.jpg",
+    "kind": "dish",
+    "label": "Puttu",
+    "hint": "Appetising photo of Puttu (Kerala)"
+  },
+  {
+    "path": "/images/regional/kl/fish-curry.jpg",
+    "kind": "dish",
+    "label": "Fish Curry",
+    "hint": "Appetising photo of Fish Curry (Kerala)"
+  },
+  {
+    "path": "/images/regional/mh/misal-pav.jpg",
+    "kind": "dish",
+    "label": "Misal Pav",
+    "hint": "Appetising photo of Misal Pav (Maharashtra)"
+  },
+  {
+    "path": "/images/regional/mh/vada-pav.jpg",
+    "kind": "dish",
+    "label": "Vada Pav",
+    "hint": "Appetising photo of Vada Pav (Maharashtra)"
+  },
+  {
+    "path": "/images/regional/mh/pav-bhaji.jpg",
+    "kind": "dish",
+    "label": "Pav Bhaji",
+    "hint": "Appetising photo of Pav Bhaji (Maharashtra)"
+  },
+  {
+    "path": "/images/regional/mh/puran-poli.jpg",
+    "kind": "dish",
+    "label": "Puran Poli",
+    "hint": "Appetising photo of Puran Poli (Maharashtra)"
+  },
+  {
+    "path": "/images/regional/pb/butter-chicken.jpg",
+    "kind": "dish",
+    "label": "Butter Chicken",
+    "hint": "Appetising photo of Butter Chicken (Punjab)"
+  },
+  {
+    "path": "/images/regional/pb/amritsari-kulcha.jpg",
+    "kind": "dish",
+    "label": "Amritsari Kulcha",
+    "hint": "Appetising photo of Amritsari Kulcha (Punjab)"
+  },
+  {
+    "path": "/images/regional/pb/chole-bhature.jpg",
+    "kind": "dish",
+    "label": "Chole Bhature",
+    "hint": "Appetising photo of Chole Bhature (Punjab)"
+  },
+  {
+    "path": "/images/regional/pb/sarson-saag.jpg",
+    "kind": "dish",
+    "label": "Sarson Saag",
+    "hint": "Appetising photo of Sarson Saag (Punjab)"
+  },
+  {
+    "path": "/images/regional/rj/dal-baati-churma.jpg",
+    "kind": "dish",
+    "label": "Dal Baati Churma",
+    "hint": "Appetising photo of Dal Baati Churma (Rajasthan)"
+  },
+  {
+    "path": "/images/regional/rj/gatte-ki-sabzi.jpg",
+    "kind": "dish",
+    "label": "Gatte Ki Sabzi",
+    "hint": "Appetising photo of Gatte Ki Sabzi (Rajasthan)"
+  },
+  {
+    "path": "/images/regional/rj/laal-maas.jpg",
+    "kind": "dish",
+    "label": "Laal Maas",
+    "hint": "Appetising photo of Laal Maas (Rajasthan)"
+  },
+  {
+    "path": "/images/regional/rj/ghevar.jpg",
+    "kind": "dish",
+    "label": "Ghevar",
+    "hint": "Appetising photo of Ghevar (Rajasthan)"
+  },
+  {
+    "path": "/images/regional/gj/dhokla.jpg",
+    "kind": "dish",
+    "label": "Dhokla",
+    "hint": "Appetising photo of Dhokla (Gujarat)"
+  },
+  {
+    "path": "/images/regional/gj/khandvi.jpg",
+    "kind": "dish",
+    "label": "Khandvi",
+    "hint": "Appetising photo of Khandvi (Gujarat)"
+  },
+  {
+    "path": "/images/regional/gj/thepla.jpg",
+    "kind": "dish",
+    "label": "Thepla",
+    "hint": "Appetising photo of Thepla (Gujarat)"
+  },
+  {
+    "path": "/images/regional/gj/gujarati-thali.jpg",
+    "kind": "dish",
+    "label": "Gujarati Thali",
+    "hint": "Appetising photo of Gujarati Thali (Gujarat)"
+  },
+  {
+    "path": "/images/regional/wb/kolkata-biryani.jpg",
+    "kind": "dish",
+    "label": "Kolkata Biryani",
+    "hint": "Appetising photo of Kolkata Biryani (West Bengal)"
+  },
+  {
+    "path": "/images/regional/wb/macher-jhol.jpg",
+    "kind": "dish",
+    "label": "Macher Jhol",
+    "hint": "Appetising photo of Macher Jhol (West Bengal)"
+  },
+  {
+    "path": "/images/regional/wb/mishti-doi.jpg",
+    "kind": "dish",
+    "label": "Mishti Doi",
+    "hint": "Appetising photo of Mishti Doi (West Bengal)"
+  },
+  {
+    "path": "/images/regional/wb/rasgulla.jpg",
+    "kind": "dish",
+    "label": "Rasgulla",
+    "hint": "Appetising photo of Rasgulla (West Bengal)"
+  },
+  {
+    "path": "/images/regional/od/dalma.jpg",
+    "kind": "dish",
+    "label": "Dalma",
+    "hint": "Appetising photo of Dalma (Odisha)"
+  },
+  {
+    "path": "/images/regional/od/pakhala-bhata.jpg",
+    "kind": "dish",
+    "label": "Pakhala Bhata",
+    "hint": "Appetising photo of Pakhala Bhata (Odisha)"
+  },
+  {
+    "path": "/images/regional/od/chhena-poda.jpg",
+    "kind": "dish",
+    "label": "Chhena Poda",
+    "hint": "Appetising photo of Chhena Poda (Odisha)"
+  },
+  {
+    "path": "/images/regional/od/odia-thali.jpg",
+    "kind": "dish",
+    "label": "Odia Thali",
+    "hint": "Appetising photo of Odia Thali (Odisha)"
+  },
+  {
+    "path": "/images/regional/as/masor-tenga.jpg",
+    "kind": "dish",
+    "label": "Masor Tenga",
+    "hint": "Appetising photo of Masor Tenga (Assam)"
+  },
+  {
+    "path": "/images/regional/as/khar.jpg",
+    "kind": "dish",
+    "label": "Khar",
+    "hint": "Appetising photo of Khar (Assam)"
+  },
+  {
+    "path": "/images/regional/as/assam-thali.jpg",
+    "kind": "dish",
+    "label": "Assam Thali",
+    "hint": "Appetising photo of Assam Thali (Assam)"
+  },
+  {
+    "path": "/images/regional/as/pitha.jpg",
+    "kind": "dish",
+    "label": "Pitha",
+    "hint": "Appetising photo of Pitha (Assam)"
+  },
+  {
+    "path": "/images/burgers/classic-burger.jpg",
+    "kind": "dish",
+    "label": "Classic Burger",
+    "hint": "Appetising photo of Classic Burger"
+  },
+  {
+    "path": "/images/chicken/chicken-lollipop.jpg",
+    "kind": "dish",
+    "label": "Chicken Lollipop",
+    "hint": "Appetising photo of Chicken Lollipop"
+  },
+  {
+    "path": "/images/kebabs/paneer-tikka.jpg",
+    "kind": "dish",
+    "label": "Paneer Tikka",
+    "hint": "Appetising photo of Paneer Tikka"
+  },
+  {
+    "path": "/images/north-indian/garlic-naan.jpg",
+    "kind": "dish",
+    "label": "Garlic Naan",
+    "hint": "Appetising photo of Garlic Naan"
+  },
+  {
+    "path": "/images/chinese/chicken-fried-rice.jpg",
+    "kind": "dish",
+    "label": "Chicken Fried Rice",
+    "hint": "Appetising photo of Chicken Fried Rice"
+  },
+  {
+    "path": "/images/desserts/brownie.jpg",
+    "kind": "dish",
+    "label": "Brownie",
+    "hint": "Appetising photo of Brownie"
+  },
+  {
+    "path": "/images/beverages/lassi.jpg",
+    "kind": "dish",
+    "label": "Lassi",
+    "hint": "Appetising photo of Lassi"
+  },
+  {
+    "path": "/images/pizza/chicken-tikka-pizza.jpg",
+    "kind": "dish",
+    "label": "Chicken Tikka Pizza",
+    "hint": "Appetising photo of Chicken Tikka Pizza"
+  },
+  {
+    "path": "/images/regional/ap/pesarattu.jpg",
+    "kind": "dish",
+    "label": "Pesarattu",
+    "hint": "Appetising photo of Pesarattu (Andhra Pradesh)"
+  },
+  {
+    "path": "/images/regional/tg/sarva-pindi.jpg",
+    "kind": "dish",
+    "label": "Sarva Pindi",
+    "hint": "Appetising photo of Sarva Pindi (Telangana)"
+  }
+]
