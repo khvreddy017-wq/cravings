@@ -47,10 +47,10 @@ import {
   EB
 } from './pages/pages.js';
 
-import { Admin } from './pages/Admin.js';
-
 import { Nav, Footer } from './components/Layout.js';
 import { Assets } from './pages/Assets.js';
+import { Admin } from './pages/Admin.js';
+import { CraveAI } from './components/CraveAI.js';
 
 import {
   getFoods,
@@ -64,18 +64,38 @@ function MissingBanner() {
   const [n, setN] = useState(0);
 
   useEffect(() => {
-    const f = () => setN(window.__missing ? window.__missing.size : 0);
-    addEventListener('cr-missing', f);
+    const f = () =>
+      setN(
+        window.__missing
+          ? window.__missing.size
+          : 0
+      );
+
+    addEventListener(
+      'cr-missing',
+      f
+    );
+
     f();
 
-    return () => removeEventListener('cr-missing', f);
+    return () =>
+      removeEventListener(
+        'cr-missing',
+        f
+      );
   }, []);
 
-  return import.meta.env && import.meta.env.DEV && n
+  return import.meta.env &&
+    import.meta.env.DEV &&
+    n
     ? A(
         '/assets',
-        { className: 'mbar' },
-        n + ' photo' + (n > 1 ? 's' : '') +
+        {
+          className: 'mbar'
+        },
+        n +
+          ' photo' +
+          (n > 1 ? 's' : '') +
           ' missing on this page. Open the image checklist.'
       )
     : null;
@@ -85,41 +105,132 @@ function MissingBanner() {
 function App() {
   const path = useHash();
 
-  const [cart, setCart] = useLS('cr2_cart', { rid: 0, items: {} });
-  const [favs, setFavs] = useLS('cr2_fav', { r: [], f: [] });
-  const [user, setUser] = useLS('cr2_user', null);
-  const [orders, setOrders] = useLS('cr2_orders', []);
-  const [coupon, setCoupon] = useLS('cr2_coupon', '');
-  const [loc, setLoc] = useLS('cr2_loc', 'Bengaluru');
-  const [theme, setTheme] = useLS('cr2_theme', 'light');
-  const [toast, setToast] = useState('');
-  const [sp, setSp] = useState(0);
-  const [foods, setFoods] = useState([]);
+  const [cart, setCart] =
+    useLS(
+      'cr2_cart',
+      {
+        rid: 0,
+        items: {}
+      }
+    );
+
+  const [favs, setFavs] =
+    useLS(
+      'cr2_fav',
+      {
+        r: [],
+        f: []
+      }
+    );
+
+  const [user, setUser] =
+    useLS(
+      'cr2_user',
+      null
+    );
+
+  const [orders, setOrders] =
+    useLS(
+      'cr2_orders',
+      []
+    );
+
+  const [coupon, setCoupon] =
+    useLS(
+      'cr2_coupon',
+      ''
+    );
+
+  const [loc, setLoc] =
+    useLS(
+      'cr2_loc',
+      'Bengaluru'
+    );
+
+  const [theme, setTheme] =
+    useLS(
+      'cr2_theme',
+      'light'
+    );
+
+  const [toast, setToast] =
+    useState('');
+
+  const [sp, setSp] =
+    useState(0);
+
+  const [foods, setFoods] =
+    useState([]);
+
+
+  // ===============================
+  // LOAD FOODS FROM MONGODB
+  // ===============================
 
   useEffect(() => {
     getFoods()
       .then(response =>
-        setFoods(Array.isArray(response.data) ? response.data : [])
+        setFoods(
+          Array.isArray(
+            response.data
+          )
+            ? response.data
+            : []
+        )
       )
       .catch(error =>
-        console.error('Failed to load foods from backend:', error)
+        console.error(
+          'Failed to load foods from backend:',
+          error
+        )
       );
   }, []);
 
-  useEffect(() => {
-    const savedToken = localStorage.getItem('cravings_token');
-    const savedUser = localStorage.getItem('cr2_user');
 
-    if (savedToken && savedUser) {
+  // ===============================
+  // RESTORE LOGIN
+  // ===============================
+
+  useEffect(() => {
+    const savedToken =
+      localStorage.getItem(
+        'cravings_token'
+      );
+
+    const savedUser =
+      localStorage.getItem(
+        'cr2_user'
+      );
+
+    if (
+      savedToken &&
+      savedUser
+    ) {
       try {
-        setUser(JSON.parse(savedUser));
+        setUser(
+          JSON.parse(
+            savedUser
+          )
+        );
       } catch (_) {}
     }
   }, []);
 
+
+  // ===============================
+  // SPLASH
+  // ===============================
+
   useEffect(() => {
-    const a = setTimeout(() => setSp(1), 1800);
-    const b = setTimeout(() => setSp(2), 2300);
+    const a = setTimeout(
+      () => setSp(1),
+      1800
+    );
+
+    const b = setTimeout(
+      () => setSp(2),
+      2300
+    );
 
     return () => {
       clearTimeout(a);
@@ -127,71 +238,149 @@ function App() {
     };
   }, []);
 
+
+  // ===============================
+  // THEME
+  // ===============================
+
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.theme =
+      theme;
   }, [theme]);
 
-  const [, tk] = useState(0);
+
+  const [, tk] =
+    useState(0);
 
   useEffect(() => {
-    const i = setInterval(() => tk(x => x + 1), 3000);
-    return () => clearInterval(i);
+    const i = setInterval(
+      () =>
+        tk(x => x + 1),
+      3000
+    );
+
+    return () =>
+      clearInterval(i);
   }, []);
+
+
+  // ===============================
+  // NOTIFICATION
+  // ===============================
 
   const notify = m => {
     setToast(m);
-    setTimeout(() => setToast(''), 1800);
+
+    setTimeout(
+      () => setToast(''),
+      1800
+    );
   };
 
+
+  // ===============================
+  // ADD TO CART
+  // ===============================
+
   const add = (f, r) => {
-    if (!r.open) return notify('Restaurant unavailable');
+    if (!r.open)
+      return notify(
+        'Restaurant unavailable'
+      );
 
     if (
       cart.rid &&
       cart.rid !== r.id &&
-      Object.keys(cart.items).length &&
+      Object.keys(
+        cart.items
+      ).length &&
       !confirm(
         'Your cart has items from another restaurant. Replace them?'
       )
-    ) {
+    )
       return;
-    }
 
     setCart(c => {
-      const base = c.rid === r.id ? c.items : {};
+      const base =
+        c.rid === r.id
+          ? c.items
+          : {};
 
       return {
         rid: r.id,
+
         items: {
           ...base,
-          [f.id]: (base[f.id] || 0) + 1
+
+          [f.id]:
+            (base[f.id] || 0) +
+            1
         }
       };
     });
 
-    notify(f.n + ' added to cart');
+    notify(
+      f.n +
+        ' added to cart'
+    );
   };
 
-  const chg = (id, d) =>
-    setCart(c => {
-      const q = (c.items[id] || 0) + d;
-      const items = { ...c.items };
 
-      if (q <= 0) delete items[id];
-      else items[id] = q;
+  // ===============================
+  // CHANGE CART
+  // ===============================
+
+  const chg = (
+    id,
+    d
+  ) =>
+    setCart(c => {
+      const q =
+        (c.items[id] || 0) +
+        d;
+
+      const items = {
+        ...c.items
+      };
+
+      if (q <= 0)
+        delete items[id];
+      else
+        items[id] = q;
 
       return {
-        rid: Object.keys(items).length ? c.rid : 0,
+        rid:
+          Object.keys(
+            items
+          ).length
+            ? c.rid
+            : 0,
+
         items
       };
     });
 
-  const fav = (k, id) => {
+
+  // ===============================
+  // FAVOURITES
+  // ===============================
+
+  const fav = (
+    k,
+    id
+  ) => {
     setFavs(x => ({
       ...x,
-      [k]: x[k].includes(id)
-        ? x[k].filter(i => i !== id)
-        : [...x[k], id]
+
+      [k]:
+        x[k].includes(id)
+          ? x[k].filter(
+              i => i !== id
+            )
+          : [
+              ...x[k],
+              id
+            ]
     }));
 
     notify(
@@ -201,66 +390,131 @@ function App() {
     );
   };
 
-  const applyCoupon = c => {
-    c = c.trim().toUpperCase();
 
-    if (!COUP[c]) return notify('Invalid coupon code');
+  // ===============================
+  // COUPON
+  // ===============================
+
+  const applyCoupon = c => {
+    c = c
+      .trim()
+      .toUpperCase();
+
+    if (!COUP[c])
+      return notify(
+        'Invalid coupon code'
+      );
 
     setCoupon(c);
-    notify(c + ' applied!');
+
+    notify(
+      c +
+        ' applied!'
+    );
   };
 
-  const login = async (id, pw) => {
+
+  // ===============================
+  // LOGIN
+  // ===============================
+
+  const login = async (
+    id,
+    pw
+  ) => {
     try {
-      const response = await loginUser({
-        email: id,
-        password: pw
-      });
+      const response =
+        await loginUser({
+          email: id,
+          password: pw
+        });
 
-      const data = response.data;
+      const data =
+        response.data;
 
-      if (!data.user || !data.token) return 'Login failed.';
+      if (
+        !data.user ||
+        !data.token
+      )
+        return 'Login failed.';
 
-      localStorage.setItem('cravings_token', data.token);
-      localStorage.setItem('cr2_user', JSON.stringify(data.user));
+      localStorage.setItem(
+        'cravings_token',
+        data.token
+      );
 
-      setUser(data.user);
+      localStorage.setItem(
+        'cr2_user',
+        JSON.stringify(
+          data.user
+        )
+      );
+
+      setUser(
+        data.user
+      );
 
       go(
-        data.user.role === 'admin'
+        data.user.role ===
+          'admin'
           ? '/admin'
           : '/profile'
       );
+
     } catch (error) {
       return (
-        error.response?.data?.message ||
+        error.response?.data
+          ?.message ||
         'Invalid email or password.'
       );
     }
   };
 
+
+  // ===============================
+  // REGISTER
+  // ===============================
+
   const register = async f => {
-    if (!f.name.trim()) return 'Enter your name.';
-    if (!/\S+@\S+\.\S+/.test(f.email))
+
+    if (!f.name.trim())
+      return 'Enter your name.';
+
+    if (
+      !/\S+@\S+\.\S+/.test(
+        f.email
+      )
+    )
       return 'Enter a valid email.';
-    if (!/^\d{10}$/.test(f.phone))
+
+    if (
+      !/^\d{10}$/.test(
+        f.phone
+      )
+    )
       return 'Enter a 10-digit phone number.';
+
     if (f.pw.length < 6)
       return 'Password must be 6+ characters.';
+
     if (f.pw !== f.pw2)
       return 'Passwords do not match.';
 
     try {
-      const response = await registerUser({
-        name: f.name,
-        email: f.email,
-        password: f.pw,
-        phone: f.phone
-      });
 
-      const data = response.data;
+      const response =
+        await registerUser({
+          name: f.name,
+          email: f.email,
+          password: f.pw,
+          phone: f.phone
+        });
 
-      if (!data.user) return 'Registration failed.';
+      const data =
+        response.data;
+
+      if (!data.user)
+        return 'Registration failed.';
 
       if (data.token)
         localStorage.setItem(
@@ -270,52 +524,99 @@ function App() {
 
       localStorage.setItem(
         'cr2_user',
-        JSON.stringify(data.user)
+        JSON.stringify(
+          data.user
+        )
       );
 
-      setUser(data.user);
+      setUser(
+        data.user
+      );
+
       go('/profile');
+
     } catch (error) {
+
       return (
-        error.response?.data?.message ||
+        error.response?.data
+          ?.message ||
         'Registration failed.'
       );
     }
   };
 
-  const placeOrder = async (addr, pay, b) => {
-    const token = localStorage.getItem('cravings_token');
 
-    if (!token || !user) {
-      notify('Please login before placing the order');
+  // ===============================
+  // PLACE ORDER
+  // ===============================
+
+  const placeOrder = async (
+    addr,
+    pay,
+    b
+  ) => {
+
+    const token =
+      localStorage.getItem(
+        'cravings_token'
+      );
+
+    if (
+      !token ||
+      !user
+    ) {
+      notify(
+        'Please login before placing the order'
+      );
+
       go('/login');
+
       return;
     }
 
     const restaurant =
-      R[cart.rid - 1] || {
-        name: 'CRAVINGS Restaurant',
+      R[
+        cart.rid - 1
+      ] || {
+        name:
+          'CRAVINGS Restaurant',
         time: 30
       };
 
     const payload = {
-      items: b.lines.map(l => ({
-        food:
-          typeof l.f.id === 'string' &&
-          l.f.id.length === 24
-            ? l.f.id
-            : undefined,
-        name: l.f.n,
-        quantity: l.q,
-        price: l.f.p
-      })),
 
-      totalAmount: b.total,
+      items:
+        b.lines.map(
+          l => ({
+            food:
+              typeof l.f.id ===
+                'string' &&
+              l.f.id.length ===
+                24
+                ? l.f.id
+                : undefined,
+
+            name:
+              l.f.n,
+
+            quantity:
+              l.q,
+
+            price:
+              l.f.p
+          })
+        ),
+
+      totalAmount:
+        b.total,
 
       deliveryAddress:
-        typeof addr === 'string'
+        typeof addr ===
+        'string'
           ? addr
-          : Object.values(addr || {})
+          : Object.values(
+              addr || {}
+            )
               .filter(Boolean)
               .join(', '),
 
@@ -328,191 +629,396 @@ function App() {
     };
 
     try {
-      const response = await createOrder(
-        payload,
-        token
-      );
 
-      const saved = response.data.order;
+      const response =
+        await createOrder(
+          payload,
+          token
+        );
+
+      const saved =
+        response.data.order;
 
       const o = {
+
         id:
           saved?._id ||
-          ('CRV' + Date.now().toString().slice(-8)),
+          (
+            'CRV' +
+            Date.now()
+              .toString()
+              .slice(-8)
+          ),
 
-        rest: restaurant.name,
-        rid: cart.rid,
+        rest:
+          restaurant.name,
 
-        lines: b.lines.map(l => ({
-          fid: l.f.id,
-          n: l.f.n,
-          q: l.q,
-          p: l.f.p
-        })),
+        rid:
+          cart.rid,
 
-        total: b.total,
+        lines:
+          b.lines.map(
+            l => ({
+              fid:
+                l.f.id,
+              n:
+                l.f.n,
+              q:
+                l.q,
+              p:
+                l.f.p
+            })
+          ),
+
+        total:
+          b.total,
+
         addr,
+
         pay,
 
-        at: Date.now(),
-        eta: restaurant.time + 10,
+        at:
+          Date.now(),
+
+        eta:
+          restaurant.time +
+          10,
 
         status:
-          saved?.orderStatus || 'Placed',
+          saved?.orderStatus ||
+          'Placed',
 
-        mongo: true
+        mongo:
+          true
       };
 
-      setOrders(x => [o, ...x]);
-      setCart({ rid: 0, items: {} });
+      setOrders(
+        x => [
+          o,
+          ...x
+        ]
+      );
+
+      setCart({
+        rid: 0,
+        items: {}
+      });
+
       setCoupon('');
 
-      go('/order/' + o.id);
+      go(
+        '/order/' +
+          o.id
+      );
+
     } catch (error) {
+
       notify(
-        error.response?.data?.message ||
+        error.response?.data
+          ?.message ||
         'Failed to place order'
       );
     }
   };
 
+
+  // ===============================
+  // LOGOUT
+  // ===============================
+
   const logout = () => {
-    localStorage.removeItem('cravings_token');
-    localStorage.removeItem('cr2_user');
+
+    localStorage.removeItem(
+      'cravings_token'
+    );
+
+    localStorage.removeItem(
+      'cr2_user'
+    );
 
     setUser(null);
+
     go('/');
   };
 
-  const count = Object.values(cart.items).reduce(
-    (a, b) => a + b,
-    0
-  );
 
-  const [p, a] = path
-    .split('?')[0]
-    .split('/')
-    .filter(Boolean)
-    .map(decodeURIComponent);
+  // ===============================
+  // CART COUNT
+  // ===============================
+
+  const count =
+    Object.values(
+      cart.items
+    ).reduce(
+      (a, b) =>
+        a + b,
+      0
+    );
+
+
+  // ===============================
+  // ROUTE
+  // ===============================
+
+  const [
+    p,
+    a
+  ] =
+    path
+      .split('?')[0]
+      .split('/')
+      .filter(Boolean)
+      .map(
+        decodeURIComponent
+      );
+
+
+  // ===============================
+  // PAGES
+  // ===============================
 
   const P = {
-    undefined: () => h(Home),
 
-    menu: () => h(Menu),
+    undefined:
+      () =>
+        h(Home),
 
-    restaurants: () =>
-      h(Discover, {
-        title: 'Restaurants near you',
-        base: R
-      }),
+    menu:
+      () =>
+        h(Menu),
 
-    category: () =>
-      CATS.includes(a)
-        ? h(Discover, {
-            title: a + ' Near You',
-            base: R.filter(r =>
-              r.cats.includes(a)
+    restaurants:
+      () =>
+        h(
+          Discover,
+          {
+            title:
+              'Restaurants near you',
+            base:
+              R
+          }
+        ),
+
+    category:
+      () =>
+        CATS.includes(a)
+          ? h(
+              Discover,
+              {
+                title:
+                  a +
+                  ' Near You',
+
+                base:
+                  R.filter(
+                    r =>
+                      r.cats.includes(
+                        a
+                      )
+                  )
+              }
             )
-          })
-        : h(NF),
+          : h(NF),
 
-    restaurant: () =>
-      h(Rest, { id: +a }),
+    restaurant:
+      () =>
+        h(
+          Rest,
+          {
+            id:
+              +a
+          }
+        ),
 
-    regional: () => h(Regional),
+    regional:
+      () =>
+        h(Regional),
 
-    state: () =>
-      h(State, { id: a }),
+    state:
+      () =>
+        h(
+          State,
+          {
+            id:
+              a
+          }
+        ),
 
-    search: () =>
-      h(Search, { q: a || '' }),
+    search:
+      () =>
+        h(
+          Search,
+          {
+            q:
+              a || ''
+          }
+        ),
 
-    offers: () => h(Offers),
+    offers:
+      () =>
+        h(Offers),
 
-    cart: () => h(Cart),
+    cart:
+      () =>
+        h(Cart),
 
-    checkout: () => h(Checkout),
+    checkout:
+      () =>
+        h(Checkout),
 
-    order: () =>
-      h(Order, { id: a }),
+    order:
+      () =>
+        h(
+          Order,
+          {
+            id:
+              a
+          }
+        ),
 
-    login: () => h(Auth),
+    login:
+      () =>
+        h(Auth),
 
-    register: () =>
-      h(Auth, { reg: 1 }),
+    register:
+      () =>
+        h(
+          Auth,
+          {
+            reg:
+              1
+          }
+        ),
 
-    profile: () =>
-      h(Profile),
+    profile:
+      () =>
+        h(Profile),
 
-    favorites: () =>
-      h(Favs),
+    favorites:
+      () =>
+        h(Favs),
 
-    admin: () =>
-      h(Admin),
+    admin:
+      () =>
+        h(Admin),
 
-    assets: () =>
-      h(Assets)
+    assets:
+      () =>
+        h(Assets)
   };
 
+
+  // ===============================
+  // REORDER
+  // ===============================
+
   const reorder = o => {
-    if (!o.rid || !o.lines)
+
+    if (
+      !o.rid ||
+      !o.lines
+    )
       return notify(
         'This order cannot be reordered from the current restaurant data.'
       );
 
     setCart({
-      rid: o.rid,
-      items: Object.fromEntries(
-        o.lines.map(l => [l.fid, l.q])
-      )
+      rid:
+        o.rid,
+
+      items:
+        Object.fromEntries(
+          o.lines.map(
+            l => [
+              l.fid,
+              l.q
+            ]
+          )
+        )
     });
 
     go('/cart');
   };
 
+
+  // ===============================
+  // CONTEXT
+  // ===============================
+
   const ctx = {
+
     theme,
     setTheme,
+
     reorder,
+
     cart,
     setCart,
+
     add,
     chg,
+
     favs,
     fav,
+
     user,
     logout,
+
     orders,
+
     coupon,
     setCoupon,
     applyCoupon,
+
     loc,
     setLoc,
+
     count,
+
     login,
     register,
+
     placeOrder,
+
     foods,
+
     notify
   };
 
+
+  // ===============================
+  // APP
+  // ===============================
+
   return h(
     C.Provider,
-    { value: ctx },
+    {
+      value:
+        ctx
+    },
 
+    // Splash
     sp < 2 &&
       h(
         'div',
         {
           className:
-            'splash' + (sp ? ' out' : ''),
+            'splash' +
+            (sp
+              ? ' out'
+              : ''),
+
           style: {
             backgroundImage:
               'linear-gradient(rgba(10,42,31,.86),rgba(10,42,31,.86)),url("' +
               heroUri() +
               '")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
+
+            backgroundSize:
+              'cover',
+
+            backgroundPosition:
+              'center'
           }
         },
 
@@ -520,13 +1026,20 @@ function App() {
           'div',
           null,
 
-          h('div', {
-            className: 'plate'
-          }),
+          h(
+            'div',
+            {
+              className:
+                'plate'
+            }
+          ),
 
           h(
             'div',
-            { className: 'logo' },
+            {
+              className:
+                'logo'
+            },
             'CRAVINGS'
           ),
 
@@ -538,42 +1051,87 @@ function App() {
 
           h(
             'div',
-            { className: 'bar' },
+            {
+              className:
+                'bar'
+            },
+
             h('i')
           )
         )
       ),
 
-    h(MissingBanner),
-
-    h(Nav, {
-      path: '/' + (p || '')
-    }),
 
     h(
-      EB,
-      { key: path },
-      (P[p] || (() => h(NF)))()
+      MissingBanner
     ),
 
+
+    // Navigation
+    h(
+      Nav,
+      {
+        path:
+          '/' +
+          (p || '')
+      }
+    ),
+
+
+    // Current page
+    h(
+      EB,
+      {
+        key:
+          path
+      },
+
+      (
+        P[p] ||
+        (() => h(NF))
+      )()
+    ),
+
+
+    // Footer
     h(Footer),
 
-    (() => {
-      const lo = orders[0];
 
-      const st = lo
-        ? Math.floor(
-            (Date.now() - lo.at) / 6000
-          )
-        : 9;
+    // ===============================
+    // CRAVEAI CHATBOT
+    // ===============================
+
+    h(CraveAI),
+
+
+    // Order tracking
+    (() => {
+
+      const lo =
+        orders[0];
+
+      const st =
+        lo
+          ? Math.floor(
+              (
+                Date.now() -
+                lo.at
+              ) / 6000
+            )
+          : 9;
 
       return (
         lo &&
         st < 3 &&
         p !== 'order' &&
         A(
-          '/order/' + lo.id,
-          { className: 'trk' },
+          '/order/' +
+            lo.id,
+
+          {
+            className:
+              'trk'
+          },
 
           'Order ' +
             lo.id +
@@ -586,58 +1144,133 @@ function App() {
             ' · Track →'
         )
       );
+
     })(),
 
+
+    // Sticky cart
     count > 0 &&
       p !== 'cart' &&
       p !== 'checkout' &&
+
       A(
         '/cart',
-        { className: 'sticky' },
+
+        {
+          className:
+            'sticky'
+        },
+
         `🛒 ${count} item${
-          count > 1 ? 's' : ''
+          count > 1
+            ? 's'
+            : ''
         } · View Cart`
       ),
 
+
+    // Toast
     toast &&
       h(
         'div',
         {
-          className: 'toast',
-          role: 'status'
+          className:
+            'toast',
+
+          role:
+            'status'
         },
+
         toast
       ),
 
+
+    // Bottom navigation
     h(
       'div',
-      { className: 'bn' },
+      {
+        className:
+          'bn'
+      },
 
       [
-        ['/', '🏠', 'Home'],
-        ['/menu', '🍴', 'Menu'],
-        ['/regional', '🗺', 'Regional'],
-        ['/cart', '🛒', 'Cart'],
-
         [
-          user ? '/profile' : '/login',
-          user ? '👤' : '🔐',
-          user ? 'Profile' : 'Login'
+          '/',
+          '🏠',
+          'Home'
         ],
 
-        ...(user?.role === 'admin'
-          ? [['/admin', '⚙️', 'Admin']]
+        [
+          '/menu',
+          '🍴',
+          'Menu'
+        ],
+
+        [
+          '/regional',
+          '🗺️',
+          'Regional'
+        ],
+
+        [
+          '/cart',
+          '🛒',
+          'Cart'
+        ],
+
+        [
+          user
+            ? '/profile'
+            : '/login',
+
+          user
+            ? '👤'
+            : '🔐',
+
+          user
+            ? 'Profile'
+            : 'Login'
+        ],
+
+        ...(user?.role ===
+        'admin'
+          ? [
+              [
+                '/admin',
+                '⚙️',
+                'Admin'
+              ]
+            ]
           : [])
-      ].map(([u, i, n]) =>
-        A(
+      ].map(
+        ([
           u,
-          { key: u },
-          h('span', null, i),
-          h('small', null, n)
-        )
+          i,
+          n
+        ]) =>
+          A(
+            u,
+            {
+              key:
+                u
+            },
+
+            h(
+              'span',
+              null,
+              i
+            ),
+
+            h(
+              'small',
+              null,
+              n
+            )
+          )
       )
     )
   );
 }
+
 
 export default App;
