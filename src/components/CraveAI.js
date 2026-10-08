@@ -838,7 +838,7 @@ Do not write extremely long explanations.
 
       const response =
         await fetch(
-          'http://localhost:5000/api/ai/chat',
+         'https://cravings-backend-3znd.onrender.com/api/ai/chat',
           {
             method:
               'POST',
